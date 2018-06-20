@@ -1,0 +1,15 @@
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+$body-font-size: 16px;
+
+@font-face {
+  font-family: 'FFMark';
+  src: url('~styles/fonts/ffmark/medium.eot');
+  src: url('~styles/fonts/ffmark/medium.eot?#iefix') format('embedded-opentype'),
+    url('~styles/fonts/ffmark/medium.woff') format('woff'),
+    url('~styles/fonts/ffmark/medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+$body_font: "FFMark", Avenir, Helvetica, sans-serif;

@@ -1,0 +1,39 @@
+// Minimized WP admin bar
+#wpadminbar {
+  background: #000;
+  padding-left: 30px;
+  transition: all 100ms ease-in-out;
+  transition-delay: 200ms;
+  top: -32px !important;
+  z-index: 1000;
+  position: fixed;
+  &:after {
+    color: white;
+    font-family: dashicons;
+    font-size: 18px;
+    line-height: 32px;
+    content: "\f464";
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    background: black;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+    transform: scaleX(-1);
+  }
+  &:hover {
+    top: 0 !important;
+    transition-delay: 0ms;
+  }
+
+  #wp-admin-bar-customize,
+  #wp-admin-bar-wp-logo,
+  #wp-admin-bar-comments,
+  #wp-admin-bar-new-post,
+  #wp-admin-bar-new-media {
+    display: none;
+  }
+}
