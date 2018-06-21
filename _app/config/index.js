@@ -1,14 +1,13 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-var build_path = path.resolve(__dirname, '../../dist/')
-var index_path = path.resolve(__dirname, '../../dist/index.php')
+var build_path = path.resolve(__dirname, '../../')
 var theme_name = path.resolve(__dirname, '../../').split(path.sep).pop() + '/'
 
 module.exports = {
   build: {
     env: require('./prod.env'),
     assetsRoot: build_path,
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'dist',
     assetsPublicPath: '/wp-content/themes/'+theme_name,
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
@@ -26,7 +25,7 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     assetsRoot: build_path,
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'dist',
     assetsPublicPath: '/wp-content/themes/'+theme_name,
     productionSourceMap: true,
     productionGzip: false,

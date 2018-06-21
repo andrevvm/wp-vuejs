@@ -27,6 +27,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     }) + '\n\n')
 
     console.log(chalk.green('  Build complete.\n'))
+    console.log(chalk.green('  Run your local Wordpress installation as you would normally.\n'))
     console.log(chalk.cyan('  Make sure to run \'npm run build\' for production-ready files.\n'))
     console.log(chalk.yellow(
       '  Watching files...'
