@@ -39,12 +39,16 @@
           .then(response => {
 
             $vm.$store.dispatch('currentData', response.data.result)
-            $vm.currentPage = $vm.$store.state.page.post_type
-
+            if($vm.$store.state.page.post_type in this.$options.components) {
+              $vm.currentPage = $vm.$store.state.page.post_type
+            } else {
+              $vm.currentPage = 'DefaultPage'
+            }
+            
           })
           .catch(e => {
-            $vm.$store.state.page = '404'
-            $vm.currentPage = '404'
+            $vm.$store.state.page = 'Error404'
+            $vm.currentPage = 'Error404'
             console.log('error!! '+e)
           })
 

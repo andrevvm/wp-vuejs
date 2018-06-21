@@ -15,8 +15,7 @@ function vue_custom_post_types() {
             'has_archive' => true,
             'hierarchical' => false,
             'rewrite' => array('slug' => 'custom', 'with_front' => true),
-            'menu_icon' => 'dashicons-book-alt',
-            'supports' => array('title', 'revisions', 'custom-fields')
+            'menu_icon' => 'dashicons-book-alt'
         )
     );
     

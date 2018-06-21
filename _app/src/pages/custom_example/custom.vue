@@ -1,6 +1,9 @@
 <template>
   <page-container>
-    
+    <template v-for="page in $store.state.pages">
+      <router-link :to="page.link"><h1 v-html="page.post_title"></h1></router-link>
+      <p>Custom post type template</p>
+    </template>
   </page-container>
 </template>
 

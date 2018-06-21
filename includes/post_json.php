@@ -32,7 +32,7 @@
 
       the_post();
 
-      $postslist->posts[] = json_api_add_acf($post);
+      $postslist->posts[] = json_api_add_meta($post);
 
     endwhile;
 
@@ -56,7 +56,7 @@
     return $postslist;
   }
    
-  function json_api_add_acf($post) 
+  function json_api_add_meta($post) 
   {
     if(!$post)
       return;
@@ -64,6 +64,9 @@
       if($post->post_content) {
         $post->post_content = wpautop($post->post_content);
       }
+
+      $post->link = str_replace( home_url(), "", get_permalink($post) );
+
       //Fetch ACF data
       if(function_exists('get_fields')) {
         $post->acf = get_fields($post->id);
