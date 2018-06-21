@@ -16,7 +16,7 @@
 
       endif;
     endif;
-      
+
   }
   add_action( 'wp', 'return_json' );
 
@@ -51,7 +51,7 @@
     //   $postslist->options = $options;
     // }
 
-    $postslist->all_posts = get_posts($args);
+    //$postslist->all_posts = get_posts($args);
     
     return $postslist;
   }

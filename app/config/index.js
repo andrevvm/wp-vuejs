@@ -7,7 +7,6 @@ var theme_name = path.resolve(__dirname, '../../').split(path.sep).pop() + '/'
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: index_path,
     assetsRoot: build_path,
     assetsSubDirectory: 'assets',
     assetsPublicPath: '/wp-content/themes/'+theme_name,
@@ -26,11 +25,11 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
-    autoOpenBrowser: true,
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    proxyTable: {},
+    assetsRoot: build_path,
+    assetsSubDirectory: 'assets',
+    assetsPublicPath: '/wp-content/themes/'+theme_name,
+    productionSourceMap: false,
+    productionGzip: false,
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
