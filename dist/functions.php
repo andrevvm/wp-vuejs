@@ -23,11 +23,13 @@
   }
 
   function vue_load_style($name, $filepath) {
-    wp_enqueue_style($name, get_theme_file_uri( $filepath ), array(), filemtime(get_template_directory() . $filepath), false );
+    if(file_exists(get_template_directory() . $filepath))
+      wp_enqueue_style($name, get_theme_file_uri( $filepath ), array(), filemtime(get_template_directory() . $filepath), false );
   }
 
   function vue_load_script($name, $filepath, $footer) {
-    wp_enqueue_script( $name, get_theme_file_uri( $filepath ), array(), filemtime(get_template_directory() . $filepath), $footer );
+    if(file_exists(get_template_directory() . $filepath))
+      wp_enqueue_script( $name, get_theme_file_uri( $filepath ), array(), filemtime(get_template_directory() . $filepath), $footer );
   }
 
   add_action('wp_enqueue_scripts', 'load_vue_scripts', 100);

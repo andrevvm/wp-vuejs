@@ -21,6 +21,8 @@
     created() {
 
       this.fetchData(window.location.pathname)
+
+      console.log(this)
       
     },
 

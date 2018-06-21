@@ -8,19 +8,19 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-var env = config.build.env
+var env = config.dev.env
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: config.dev.productionSourceMap,
       extract: true
     })
   },
   watch: true,
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: config.dev.productionSourceMap ? '#source-map' : false,
   output: {
-    path: config.build.assetsRoot,
+    path: config.dev.assetsRoot,
     filename: utils.assetsPath('js/[name].js'),
     chunkFilename: utils.assetsPath('js/[id].js')
   },
@@ -60,18 +60,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    // copy custom static assets
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../static'),
-    //     to: config.build.assetsSubDirectory,
-    //     ignore: ['.*']
-    //   }
-    // ])
+
   ]
 })
 
-if (config.build.bundleAnalyzerReport) {
+if (config.dev.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
