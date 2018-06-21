@@ -16,10 +16,10 @@
 
   // Load scripts
   function load_vue_scripts() {
-    vue_load_style('app.css', 'dist/css/app.css', false, null);
-    vue_load_script('manifest.js', 'dist/js/manifest.js', true);
-    vue_load_script('vendor.js', 'dist/js/vendor.js', true);
-    vue_load_script('app.js', 'dist/js/app.js', true);
+    vue_load_style('app.css', '/dist/css/app.css', false, null);
+    vue_load_script('manifest.js', '/dist/js/manifest.js', true);
+    vue_load_script('vendor.js', '/dist/js/vendor.js', true);
+    vue_load_script('app.js', '/dist/js/app.js', true);
   }
 
   function vue_load_style($name, $filepath) {

@@ -21,8 +21,6 @@
     created() {
 
       this.fetchData(window.location.pathname)
-
-      console.log(this)
       
     },
 
@@ -42,8 +40,6 @@
 
             $vm.$store.dispatch('currentData', response.data.result)
             $vm.currentPage = $vm.$store.state.page.post_type
-
-            console.log($vm.currentPage)
 
           })
           .catch(e => {

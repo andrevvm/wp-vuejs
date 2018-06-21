@@ -21,6 +21,5 @@ requireComponent.keys().forEach(fileName => {
         .replace(/\.\w+$/, '')
     
   // Globally register the component
-  console.log(componentName)
   Vue.component(componentName, componentConfig.default || componentConfig)
 })
