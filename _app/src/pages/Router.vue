@@ -38,12 +38,16 @@
         HTTP.get(url)
           .then(response => {
 
+            var currentTitleTag = document.title
+
             $vm.$store.dispatch('currentData', response.data.result)
             if($vm.$store.state.page.post_type in this.$options.components) {
               $vm.currentPage = $vm.$store.state.page.post_type
             } else {
               $vm.currentPage = 'DefaultPage'
             }
+
+            document.title = $vm.$store.state.page.post_title + ' – ' + currentTitleTag.split('–')[1]
             
           })
           .catch(e => {
